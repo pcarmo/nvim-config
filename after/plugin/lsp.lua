@@ -3,6 +3,7 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+    'csharp_ls'
 })
 
 -- Fix Undefined global 'vim'
@@ -52,8 +53,10 @@ end)
 
 lsp.setup()
 
+
 vim.diagnostic.config({
     virtual_text = true
+
 })
 
 
