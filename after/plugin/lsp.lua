@@ -1,3 +1,5 @@
+require("lsp-format").setup {}
+
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
@@ -37,6 +39,7 @@ lsp.set_preferences({
 })
 
 lsp.on_attach(function(client, bufnr)
+  require("lsp-format").on_attach(client)
   local opts = {buffer = bufnr, remap = false}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
